@@ -1,10 +1,10 @@
 
 
 const env = {
-  database: 'database_umg_johann',
-  username: 'database_umg_johann_user',
-  password: 'R0fTeIhiwXIz6zi0AHK0nz5faOj8f0jj',
-  host: 'dpg-cqc7louehbks738amlg0-a.oregon-postgres.render.com',
+  database: 'database_render_bcvu',
+  username: 'database_render_user',
+  password: 'LdO5bcTVK5HJDaZoZzgBkRxIH0SBZDla',
+  host: 'dpg-crot6052ng1s73ak89u0-a.oregon-postgres.render.com',
   dialect: 'postgres',
   pool: {
     max: 5,
