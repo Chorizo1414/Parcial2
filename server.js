@@ -1,40 +1,50 @@
-
-
 const express = require('express');
 const app = express();
 
-var bodyParser = require('body-parser');
- 
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
 const db = require('./app/config/db.config.js');
-  
-// force: true will drop the table if it already exists
-db.sequelize.sync({force: true}).then(() => {
-  console.log('Drop and Resync with { force: true }');
-}); 
 
-let router = require('./app/routers/router.js');
+// Sincronización de base de datos sin eliminar tablas existentes
+db.sequelize.sync({ force: false }).then(() => {
+  console.log('Database synchronized without dropping existing tables.');
+});
 
-const cors = require('cors')
+// Configuraciones de CORS
 const corsOptions = {
   origin: 'http://localhost:4200',
   optionsSuccessStatus: 200
-}
+};
 app.use(cors(corsOptions));
+
+// Parseo de solicitudes de tipo application/json
 app.use(bodyParser.json());
 
+// Importación de rutas con nombres genéricos
+let router1 = require('./app/routers/router1.js');
+let router2 = require('./app/routers/router2.js');
+let router3 = require('./app/routers/router3.js');
+let router4 = require('./app/routers/router4.js');
+let router5 = require('./app/routers/router5.js');
+let router6 = require('./app/routers/router6.js');
 
-app.use('/', router);
+// Uso de rutas con nombres genéricos
+app.use('/', router1);
+app.use('/', router2);  // Rutas para modelo1
+app.use('/', router3);  // Rutas para modelo2
+app.use('/', router4);  // Rutas para modelo3
+app.use('/', router5);  // Rutas para modelo4
+app.use('/', router6);  // Rutas para modelo5
 
-app.get("/",(req,res) => {
-  
-  res.json({mesage:"Bienvenido Escuchante de spotify"});
-})
+// Ruta base
+app.get("/", (req, res) => {
+  res.json({ message: "Bienvenido Estudiantes de UMG" });
+});
 
-// Create a Server
+// Creación del servidor
 const server = app.listen(8000, function () {
- 
-  let host = server.address().address
-  let port = server.address().port
- 
-  console.log("App listening at http://%s:%s", host, port); 
-})
+  let host = server.address().address;
+  let port = server.address().port;
+  console.log("App listening at http://%s:%s", host, port);
+});

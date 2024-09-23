@@ -1,21 +1,19 @@
-
-
 const env = require('./env.js');
- 
+
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize(env.database, env.username, env.password, {
   host: env.host,
   dialect: env.dialect,
-  dialectOptions:{
+  dialectOptions: {
     ssl: {
       require: true,
       rejectUnauthorized: false
     }
   },
   operatorsAliases: false,
- 
+
   pool: {
-    max: env.max,
+    max: env.pool.max,
     min: env.pool.min,
     acquire: env.pool.acquire,
     idle: env.pool.idle,
@@ -26,7 +24,13 @@ const db = {};
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
- 
-db.Cancion = require('../models/cancion.model.js')(sequelize, Sequelize);
+
+// Modelos genéricos
+db.Model1 = require('../models/model1.js')(sequelize, Sequelize);
+db.Model2 = require('../models/model2.js')(sequelize, Sequelize);
+db.Model3 = require('../models/model3.js')(sequelize, Sequelize);
+db.Model4 = require('../models/model4.js')(sequelize, Sequelize);
+db.Model5 = require('../models/model5.js')(sequelize, Sequelize);
+db.Model6 = require('../models/model6.js')(sequelize, Sequelize);
 
 module.exports = db;
