@@ -8,6 +8,7 @@ router.post('/api/canciones/create', canciones.create);
 router.get('/api/canciones/onebyid/:id', canciones.getCancionById);
 router.get('/api/canciones/filteringbytime', canciones.filteringByTime);
 router.get('/api/canciones/filteringbyyear', canciones.filteringByYear);
+router.get('api/canciones/all', canciones.getAllCanciones);
 router.put('/api/canciones/update/:id', canciones.updateById);
 router.delete('/api/canciones/delete/:id', canciones.deleteById);
 

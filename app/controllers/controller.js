@@ -167,6 +167,20 @@ exports.updateById = async (req, res) => {
     }
 }
 
+exports.getAllCanciones = (req, res) => {
+    Cancion.findAll()
+      .then(canciones => {
+        res.status(200).json(canciones);
+      })
+      .catch(error => {
+        res.status(500).json({
+          message: "Error al recuperar todas las canciones.",
+          error: error.message
+        });
+      });
+  };
+  
+
 
 
 exports.deleteById = async (req, res) => {
