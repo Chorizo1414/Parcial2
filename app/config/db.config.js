@@ -26,11 +26,11 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 // Modelos genéricos
-db.Model1 = require('../models/model1.js')(sequelize, Sequelize);
-db.Model2 = require('../models/model2.js')(sequelize, Sequelize);
-db.Model3 = require('../models/model3.js')(sequelize, Sequelize);
-db.Model4 = require('../models/model4.js')(sequelize, Sequelize);
-db.Model5 = require('../models/model5.js')(sequelize, Sequelize);
-db.Model6 = require('../models/model6.js')(sequelize, Sequelize);
+db.Model1 = require('../models/model1.model.js')(sequelize, Sequelize);
+db.Model2 = require('../models/model2.model.js')(sequelize, Sequelize);
+db.Model3 = require('../models/model3.model.js')(sequelize, Sequelize);
+db.Model4 = require('../models/model4.model.js')(sequelize, Sequelize);
+db.Model5 = require('../models/model5.model.js')(sequelize, Sequelize);
+db.Model6 = require('../models/model6.model.js')(sequelize, Sequelize);
 
 module.exports = db;
