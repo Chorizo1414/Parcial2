@@ -22,12 +22,12 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // Importación de rutas con nombres genéricos
-let router1 = require('./app/routers/router1.js');
-let router2 = require('./app/routers/router2.js');
-let router3 = require('./app/routers/router3.js');
-let router4 = require('./app/routers/router4.js');
-let router5 = require('./app/routers/router5.js');
-let router6 = require('./app/routers/router6.js');
+let router1 = require('./app/routers/router1.router.js');
+let router2 = require('./app/routers/router2.router.js');
+let router3 = require('./app/routers/router3.router.js');
+let router4 = require('./app/routers/router4.router.js');
+let router5 = require('./app/routers/router5.router.js');
+let router6 = require('./app/routers/router6.router.js');
 
 // Uso de rutas con nombres genéricos
 app.use('/', router1);

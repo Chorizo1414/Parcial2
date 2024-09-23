@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controller3 = require('../controllers/controller3.js');
+const controller3 = require('../controllers/controller3.controller.js');
 
 // Crear una nueva entrada
 router.post('/model3/create', controller3.create);
