@@ -25,12 +25,10 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-// Modelos genéricos
-db.Model1 = require('../models/model1.model.js')(sequelize, Sequelize);
-db.Model2 = require('../models/model2.model.js')(sequelize, Sequelize);
-db.Model3 = require('../models/model3.model.js')(sequelize, Sequelize);
-db.Model4 = require('../models/model4.model.js')(sequelize, Sequelize);
-db.Model5 = require('../models/model5.model.js')(sequelize, Sequelize);
-db.Model6 = require('../models/model6.model.js')(sequelize, Sequelize);
+
+db.Catedratico = require('../models/catedratico.model.js')(sequelize, Sequelize);
+db.Horario = require('../models/horario.model.js')(sequelize, Sequelize);
+db.ControlIngreso = require('../models/control_ingreso.model.js')(sequelize, Sequelize);
+db.LogInasistencia = require('../models/log_inasistencia.model.js')(sequelize, Sequelize);
 
 module.exports = db;

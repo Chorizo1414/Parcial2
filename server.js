@@ -21,21 +21,17 @@ app.use(cors(corsOptions));
 // Parseo de solicitudes de tipo application/json
 app.use(bodyParser.json());
 
-// Importación de rutas con nombres genéricos
-let router1 = require('./app/routers/router1.router.js');
-let router2 = require('./app/routers/router2.router.js');
-let router3 = require('./app/routers/router3.router.js');
-let router4 = require('./app/routers/router4.router.js');
-let router5 = require('./app/routers/router5.router.js');
-let router6 = require('./app/routers/router6.router.js');
+// Importación de rutas con nombres correctos según tu estructura de archivos
+let catedratico = require('./app/routers/catedratico.router.js');
+let controlIngreso = require('./app/routers/control_ingreso.router.js');
+let horario = require('./app/routers/horario.router.js');
+let logInasistencia = require('./app/routers/log_inasistencia.router.js');
 
-// Uso de rutas con nombres genéricos
-app.use('/', router1);
-app.use('/', router2);  // Rutas para modelo1
-app.use('/', router3);  // Rutas para modelo2
-app.use('/', router4);  // Rutas para modelo3
-app.use('/', router5);  // Rutas para modelo4
-app.use('/', router6);  // Rutas para modelo5
+// Uso de rutas
+app.use('/', catedratico);
+app.use('/', controlIngreso);  
+app.use('/', horario);  
+app.use('/', logInasistencia);  
 
 // Ruta base
 app.get("/", (req, res) => {
